@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empower Your Business with Advanced AI & Automation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+        :root {
+            --chat--font-family: 'Roboto', sans-serif;
+            --chat--color-primary: #2575fc;
+            --chat--color-secondary: #6a11cb;
+            --chat--color-background: #ffffff;
+            --chat--color-text: #343a40;
+            --chat--header--background: linear-gradient(to right, #6a11cb, #2575fc);
+            --chat--header--color: #ffffff;
+            --chat--message--bot--background: #f8f9fa;
+            --chat--message--bot--color: #343a40;
+            --chat--message--user--background: #2575fc;
+            --chat--message--user--color: #ffffff;
+            --chat--toggle--background: linear-gradient(to right, #6a11cb, #2575fc);
+
+            /* UI Enhancements */
+            --chat--border-radius: 16px; /* More rounded corners for the window */
+            --chat--message--border-radius: 22px; /* More rounded messages */
+            --chat--spacing: 1rem;
+            --chat--transition-duration: 0.3s;
+            --chat--toggle--hover--background: linear-gradient(to right, #5a0bcc, #1565ec); /* Darker hover for toggle */
+        }
+
+        .n8n-chat-powered-by {
+            display: none !important;
+        }
+
+        /* Add a subtle shadow and ensure border-radius applies to the main window */
+        .n8n-chat-window {
+            box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            border-radius: var(--chat--border-radius) !important;
+            border: none !important; /* Remove default border */
+            outline: none !important; /* Remove default outline */
+        }
+
+        /* Make the toggle button pop a bit on hover */
+        .n8n-chat-toggle {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .n8n-chat-toggle:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Round the user input field */
+        .n8n-chat-textarea {
+            border-radius: 20px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container-fluid bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1>Transform Complex Business Processes with Cutting-Edge AI Automation</h1>
+            <p class="lead">Streamline operations, enhance customer experience, and scale faster using powerful automation workflows and AI integrations.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="features" class="my-5">
+            <h2 class="text-center mb-5">Key Features / Solutions</h2>
+            <div class="features-container">
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h5 class="feature-title">Multi-Channel AI-Powered Support Systems</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Unify support channels like WhatsApp, Slack, and Discord. Our AI analyzes, routes, and automatically updates your CRM.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Inputs</span>
+                                <div class="flow-icons">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <i class="fab fa-telegram"></i>
+                                    <i class="fab fa-slack"></i>
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">AI Processing</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Outputs</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-table-cells"></i>
+                                    <i class="fab fa-google-drive"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-user-tie feature-icon"></i>
+                        <h5 class="feature-title">Automated HR & Recruitment Workflows</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Seamlessly manage hiring: from document collection on Google Drive, applicant tracking in Airtable, to automated interview scheduling and onboarding via email.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Applicants</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-file-alt"></i>
+                                    <i class="fab fa-google-drive"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Automation</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Actions</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <i class="fas fa-envelope-open-text"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-share-alt feature-icon"></i>
+                        <h5 class="feature-title">End-to-End Social Media Automation</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Plan, schedule, and publish content across Instagram, Twitter, and more. Track real-time analytics and optimize campaigns automatically.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Content</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-file-lines"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Publish</span>
+                                <div class="flow-icons">
+                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Analyze</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-poll-h feature-icon"></i>
+                        <h5 class="feature-title">Survey & Form Data Pipelines</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Capture responses from Typeform or Google Forms, enrich data with AI insights, store securely, and generate automated summary reports.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Responses</span>
+                                <div class="flow-icons">
+                                    <i class="fab fa-wpforms"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Enrich</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Store</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-database"></i>
+                                    <i class="fas fa-file-invoice"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-file-invoice-dollar feature-icon"></i>
+                        <h5 class="feature-title">Finance & Operations Document Automation</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Automate PDF parsing, Google Drive archiving, and database updates for seamless reporting and compliance.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Documents</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Process</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Archive</span>
+                                <div class="flow-icons">
+                                    <i class="fab fa-google-drive"></i>
+                                    <i class="fas fa-database"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h5 class="feature-title">AI-Powered Research and Knowledge Management</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Build RAG (Retrieval-Augmented Generation) pipelines, analyze uploaded documents, enrich your knowledge base, and deliver actionable insights.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Docs</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-file-upload"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">RAG</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Knowledge</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-box-open feature-icon"></i>
+                        <h5 class="feature-title">Order Fulfillment & Inventory Automation</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Connect your e-commerce platforms to inventory systems like Airtable, update stock levels in real time, and automate notifications to your team.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Orders</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Inventory</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-boxes-stacked"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Notify</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <i class="fas fa-pen-nib feature-icon"></i>
+                        <h5 class="feature-title">Content Publishing & Community Management</h5>
+                    </div>
+                    <div class="feature-content">
+                        <p>Automate content publishing to WordPress, manage Telegram or Discord community workflows, and ensure compliance with real-time AI checks.</p>
+                        <div class="visual-flow">
+                            <div class="flow-group">
+                                <span class="flow-label">Content</span>
+                                <div class="flow-icons">
+                                    <i class="fas fa-pen-nib"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Publish</span>
+                                <div class="flow-icons">
+                                    <i class="fab fa-wordpress"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-arrow-right flow-arrow"></i>
+                            <div class="flow-group">
+                                <span class="flow-label">Community</span>
+                                <div class="flow-icons">
+                                    <i class="fab fa-discord"></i>
+                                    <i class="fab fa-telegram"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="row bg-light p-5 my-5">
+            <h2 class="text-center mb-4">Why Choose Us?</h2>
+            <div class="col-md-6">
+                <ul>
+                    <li>Custom-built, scalable solutions using n8n and cloud services like Railway.com</li>
+                    <li>Reliable, always-on workflows that handle large data volumes and demand spikes</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Deep integrations with tools like Google Sheets, Notion, Airtable, Slack, and more</li>
+                    <li>Reduce manual work, increase speed, and improve accuracy across operations</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="cta" class="text-center my-5">
+            <h2>Start Automating Today</h2>
+            <a href="submission.html" class="btn btn-primary btn-lg">Book a Free Consultation</a>
+        </section>
+    </main>
+
+    <footer class="container-fluid bg-dark text-white text-center py-3">
+        <p>AI Automation | Scalable AI Workflows | Privacy & Security First</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+      createChat({
+        webhookUrl: 'https://primary-production-9e0f.up.railway.app/webhook/481ea581-172f-47f2-943f-44f75ab0f979/chat',
+        showWelcomeScreen: false,
+        initialMessages: [
+          'Hi there! 👋',
+        ],
+        i18n: {
+          en: {
+            title: ' ',
+            subtitle: "Start a chat. We're here to help you 24/7.",
+          },
+        },
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1G_FlG5U75b6xR0IWIO72sZ1HQbVGkfTn1ztasKWZ7aI",
+          "mode": "list",
+          "cachedResultName": "n8n lead",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1G_FlG5U75b6xR0IWIO72sZ1HQbVGkfTn1ztasKWZ7aI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1G_FlG5U75b6xR0IWIO72sZ1HQbVGkfTn1ztasKWZ7aI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "First name": "={{ $json.body.firstName }}",
+            "Last name": "={{ $json.body.lastName }}",
+            "Email": "={{ $json.body.email }}",
+            "Automation Type": "={{ $json.body.automationType }}",
+            "Booking Date": "={{ $json.body.date }}",
+            "Booking Time": "={{ $json.body.time }}",
+            "Message": "={{ $json.body.needs }}",
+            "Date": "={{ $now }}",
+            "rejected": ""
+          },
+          "matchingColumns": [
+            "Email"
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -940,
+        -320
+      ],
+      "id": "1e526053-dcbe-4a97-a8bd-b979de753dcf",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "sz0A3APSNRUbJm5V",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "739d8ccf-4a0a-479b-91e7-6427681622ff",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1340,
+        -220
+      ],
+      "id": "29735761-54b3-4486-b32d-098ccb4e71ba",
+      "name": "Webhook",
+      "webhookId": "739d8ccf-4a0a-479b-91e7-6427681622ff"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "901579abb2b3c3e5cdca068f113814f6214209b7d4f6fa0780da31262abbe7cf"
+  }
+}
